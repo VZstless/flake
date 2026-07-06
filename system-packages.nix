@@ -1,0 +1,67 @@
+{ config, pkgs, ... }:
+
+{
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    alpine
+    alsa-utils
+    android-tools
+    bat
+    binsider
+    bird2
+    btop
+    cbonsai
+    cloc
+    curl
+    eog
+    element-desktop
+    fastfetch
+    file
+    fish
+    fzf
+    git
+    git-absorb
+    gnupg
+    gping
+    hyfetch
+    inotify-info
+    iptables
+    just
+    kitty
+    lazygit
+    lsof
+    mc
+    motrix
+    nautilus
+    networkmanager
+    neovim
+    nixd
+    nix-output-monitor
+    noctalia-shell
+    nodejs
+    nvtopPackages.intel
+    obsidian
+    obs-studio
+    pciutils
+    pinentry-all
+    quickshell
+    wget
+    ripgrep
+    squashfsTools
+    telegram-desktop
+    thunderbird
+    tinyxxd
+    tor-browser
+    tree
+    typst
+    usbutils
+    util-linux
+    valgrind
+    vlc
+    weechat
+    wireguard-tools
+    xonsh
+    zip
+  ];
+}
