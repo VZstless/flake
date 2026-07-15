@@ -1,5 +1,4 @@
 # FLAKE
-This project may start after I finish all exams in 2026, maybe from July 4th.  
 
 ## DESC
 A flake for a Lunar Lake laptop and a build machine.  
