@@ -55,6 +55,17 @@
     package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
   };
 
+  programs.gnupg = {
+    package = pkgs.gnupg;
+    agent = {
+      enable = true;
+      enableBrowserSocket = true;
+      enableExtraSocket = true;
+      enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-tty;
+    };
+  };
+
   systemd.services.fcitx5 = {
     enable = true;
     description = "Fcitx5 input method framework";
@@ -89,10 +100,6 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   # List services that you want to enable:
 

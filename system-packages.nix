@@ -11,7 +11,6 @@
     binsider
     bird2
     btop
-    cbonsai
     cloc
     curl
     eog
@@ -22,7 +21,6 @@
     fzf
     git
     git-absorb
-    gnupg
     gping
     hyfetch
     inotify-info
@@ -32,7 +30,6 @@
     lazygit
     lsof
     mc
-    motrix
     nautilus
     networkmanager
     neovim
