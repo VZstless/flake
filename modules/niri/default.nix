@@ -3,7 +3,6 @@
 {
   services.displayManager.sessionPackages = [ pkgs.niri ];
   environment.systemPackages = with pkgs; [
-    niri
     xwayland-satellite  # Required for X11 app compatibility
     fuzzel      # App launcher (Super+D opens by default)
     swaylock    # Screen locker (Super+Alt+L locks the screen)
@@ -14,7 +13,7 @@
   ];
 
   programs.niri = {
-    enable = true;
+    enable = lib.mkForce true;
     package = pkgs.niri;
   };
 
