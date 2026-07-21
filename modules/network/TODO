@@ -1,0 +1,2 @@
+default as a top layer  
+then, put tailscale, default networkmanager and openssh here for further config
