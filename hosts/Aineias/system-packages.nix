@@ -35,14 +35,12 @@
     neovim
     nixd
     nix-output-monitor
-    noctalia-shell
     nodejs
     nvtopPackages.intel
     obsidian
     obs-studio
     pciutils
     pinentry-all
-    quickshell
     wget
     ripgrep
     squashfsTools
