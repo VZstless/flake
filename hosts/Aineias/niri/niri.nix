@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   services.displayManager.sessionPackages = [ pkgs.niri ];
@@ -16,7 +16,7 @@
     package = pkgs.niri;
   };
 
-  programs.waybar.enable = true;          # Waybar status bar (top bar)
-  security.polkit.enable = true;          # Polkit for authentication dialogs
-  services.gnome.gnome-keyring.enable = true; # Secret service (for storing passwords)
+  programs.waybar.enable = lib.mkDefault true;          # Waybar status bar (top bar)
+  security.polkit.enable = lib.mkDefault true;          # Polkit for authentication dialogs
+  # services.gnome.gnome-keyring.enable = lib.mkDefault false; # Secret service (for storing passwords)
 }
