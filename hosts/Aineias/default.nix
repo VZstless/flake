@@ -62,12 +62,6 @@
     };
   };
 
-  systemd.services.fcitx5 = {
-    enable = true;
-    description = "Fcitx5 input method framework";
-    wantedBy = [ "multi-user.target" ];
-  };
-
   networking.nameservers = [ 
     "100.100.100.100"
     "8.8.8.8"

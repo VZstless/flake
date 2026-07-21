@@ -21,6 +21,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # input method from here
+  systemd.services.fcitx5 = {
+    enable = true;
+    description = "Fcitx5 input method framework";
+    wantedBy = [ "multi-user.target" ];
+  };
+
   i18n.inputMethod = {
     type = "fcitx5"; 
     enable = true; 
@@ -38,9 +45,9 @@
     XMODIFIERS = "@im=fcitx";
   };
 
-  # 安装中文字体
+  # install fonts
   fonts.packages = with pkgs; [
-    noto-fonts-cjk-sans   # Noto 字体
+    noto-fonts-cjk-sans   # Noto font, ready to change into other CJK font
     nerd-fonts.symbols-only
     # Optional: Add a full Nerd Font for terminals and other applications
     nerd-fonts.jetbrains-mono
