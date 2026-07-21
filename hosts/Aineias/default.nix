@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./boot.nix
       ./intel-graphics.nix
-      ./locale.nix
+      ../../modules/locale
       ../../modules/niri
       ./system-packages.nix
     ];
