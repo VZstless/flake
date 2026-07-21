@@ -12,6 +12,7 @@
       ./intel-graphics.nix
       ../../modules/locale
       ../../modules/niri
+      ../../modules/nixpkgsConfig
       ./system-packages.nix
     ];
 
@@ -100,9 +101,6 @@
     };
   };
   
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
-  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
   system.forbiddenDependenciesRegexes = [
     "-bun-"
     "-bun$"
