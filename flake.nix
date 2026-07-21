@@ -26,8 +26,7 @@
       };
 
       modules = [
-        ./configuration.nix
-        ./system-packages.nix
+        ./hosts/Aineias
         {
           nixpkgs.overlays = [
             nur.overlays.default
