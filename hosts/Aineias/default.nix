@@ -11,7 +11,7 @@
       ./boot.nix
       ./intel-graphics.nix
       ./locale.nix
-      ./niri/niri.nix
+      ../../modules/niri
       ./system-packages.nix
     ];
 

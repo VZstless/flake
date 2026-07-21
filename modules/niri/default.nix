@@ -18,5 +18,4 @@
 
   programs.waybar.enable = lib.mkDefault true;          # Waybar status bar (top bar)
   security.polkit.enable = lib.mkDefault true;          # Polkit for authentication dialogs
-  # services.gnome.gnome-keyring.enable = lib.mkDefault false; # Secret service (for storing passwords)
 }
