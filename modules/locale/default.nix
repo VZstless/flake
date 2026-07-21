@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-
+# For servers or NUCs, disable fcitx5 and inputMethod.
 
 {
   # Set your time zone.
@@ -23,14 +23,14 @@
 
   # input method from here
   systemd.services.fcitx5 = {
-    enable = true;
+    enable = lib.mkDefault true;
     description = "Fcitx5 input method framework";
     wantedBy = [ "multi-user.target" ];
   };
 
   i18n.inputMethod = {
     type = "fcitx5"; 
-    enable = true; 
+    enable = lib.mkDefault true; 
     fcitx5.addons = with pkgs; [ 
       fcitx5-gtk # alternatively, 
       qt6Packages.fcitx5-chinese-addons

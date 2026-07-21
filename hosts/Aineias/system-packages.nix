@@ -52,11 +52,9 @@
     typst
     usbutils
     util-linux
-    valgrind
     vlc
     weechat
     wireguard-tools
     xonsh
-    zip
   ];
 }
