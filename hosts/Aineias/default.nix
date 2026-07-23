@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -14,28 +14,13 @@
       ../../modules/locale
       ../../modules/niri
       ../../modules/osConfig
+      ../../modules/desktop
+      ../../modules/network
+      ../../modules/network/ssh
+      ../../modules/network/firefox
     ];
 
   networking.hostName = "Aineias"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none";
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
 
   users.users.root.hashedPassword = "!";
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -43,11 +28,6 @@
     isNormalUser = true;
     description = "VZstless";
     extraGroups = [ "audio" "networkmanager" "wheel" ];
-  };
-
-  programs.firefox = {
-    enable = true;
-    package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
   };
 
   programs.gnupg = {
@@ -67,24 +47,12 @@
     "8.8.4.4"
     "1.1.1.1"
   ];
-  networking.search = [ "example.ts.net" ];
 
   security.sudo.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
 
   # List services that you want to enable:
 
   services.tailscale.enable = true;
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      UseDns = false;
-    };
-  };
 
   system.stateVersion = "25.05";
 
