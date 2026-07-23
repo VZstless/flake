@@ -11,28 +11,33 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nur, ... }: {
+  outputs = inputs@{ self, nixpkgs, nur, ... }:
 
-    nixosConfigurations.Aineias = nixpkgs.lib.nixosSystem {
+    let
+      lib = nixpkgs.lib;
+    in {
+      osModules = import ./modules { inherit lib; };
+
+      nixosConfigurations.Aineias = nixpkgs.lib.nixosSystem {
       
-      system = "x86_64-linux";
+        system = "x86_64-linux";
 
-      specialArgs = {
-        inherit inputs;
+        specialArgs = {
+          inherit inputs;
+        };
+
+        modules = [
+          ./hosts/Aineias
+          {
+            nixpkgs.overlays = [
+              nur.overlays.default
+            ];
+          }
+          {
+            nix.settings.trusted-users = [ "vzstless" ];
+          }
+        ];
       };
-
-      modules = [
-        ./hosts/Aineias
-        {
-          nixpkgs.overlays = [
-            nur.overlays.default
-          ];
-        }
-        {
-          nix.settings.trusted-users = [ "vzstless" ];
-        }
-      ];
     };
-  };
 }
 
