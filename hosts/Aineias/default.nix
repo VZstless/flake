@@ -15,7 +15,7 @@
       ../../modules/niri
       ../../modules/osConfig
       ../../modules/desktop
-      ../../modules/network
+      ../../modules/network/common
       ../../modules/network/ssh
       ../../modules/network/firefox
       ../../modules/network/tailscale
