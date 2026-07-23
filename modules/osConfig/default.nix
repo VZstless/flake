@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
 {
+  security.sudo.enable = true;
+
   nixpkgs.config = {
     allowUnfree = lib.mkDefault true;
     allowBroken = lib.mkDefault true;

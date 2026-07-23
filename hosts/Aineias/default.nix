@@ -1,8 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# Top configuration for Aineias
+# which is an Intel Lunar Lake Laptop with intel graphics and mostly
+# non developing related system-wide dependencies.
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
       ./boot.nix
       ./intel-graphics.nix
       ./system-packages.nix
+      ../../modules/gpg
       ../../modules/locale
       ../../modules/niri
       ../../modules/osConfig
@@ -18,41 +19,17 @@
       ../../modules/network
       ../../modules/network/ssh
       ../../modules/network/firefox
+      ../../modules/network/tailscale
     ];
 
   networking.hostName = "Aineias"; # Define your hostname.
 
-  users.users.root.hashedPassword = "!";
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # default user as vzstless
   users.users.vzstless = {
     isNormalUser = true;
     description = "VZstless";
     extraGroups = [ "audio" "networkmanager" "wheel" ];
   };
-
-  programs.gnupg = {
-    package = pkgs.gnupg;
-    agent = {
-      enable = true;
-      enableBrowserSocket = true;
-      enableExtraSocket = true;
-      enableSSHSupport = true;
-      pinentryPackage = pkgs.pinentry-tty;
-    };
-  };
-
-  networking.nameservers = [ 
-    "100.100.100.100"
-    "8.8.8.8"
-    "8.8.4.4"
-    "1.1.1.1"
-  ];
-
-  security.sudo.enable = true;
-
-  # List services that you want to enable:
-
-  services.tailscale.enable = true;
 
   system.stateVersion = "25.05";
 
