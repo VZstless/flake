@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # List packages installed in system profile. To search, run:
@@ -31,7 +31,6 @@
     lsof
     mc
     nautilus
-    networkmanager
     neovim
     nixd
     nix-output-monitor

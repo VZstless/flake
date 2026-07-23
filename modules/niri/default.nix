@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   services.displayManager.sessionPackages = [ pkgs.niri ];
