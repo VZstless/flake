@@ -2,23 +2,23 @@
 # which is an Intel Lunar Lake Laptop with intel graphics and mostly
 # non developing related system-wide dependencies.
 
-{ ... }:
+{ osModules, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports =  with osModules; [
+      gpg
+      locale
+      niri
+      osConfig
+      desktop
+      network.common
+      network.ssh
+      network.firefox
+      network.tailscale
+    ] ++ [
       ./hardware-configuration.nix
-      ./intel-graphics.nix
       ./system-packages.nix
-      ../../modules/gpg
-      ../../modules/locale
-      ../../modules/niri
-      ../../modules/osConfig
-      ../../modules/desktop
-      ../../modules/network/common
-      ../../modules/network/ssh
-      ../../modules/network/firefox
-      ../../modules/network/tailscale
+      ./intel-graphics.nix
     ];
 
   networking.hostName = "Aineias"; # Define your hostname.

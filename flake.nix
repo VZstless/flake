@@ -15,15 +15,15 @@
 
     let
       lib = nixpkgs.lib;
-    in {
       osModules = import ./modules { inherit lib; };
-
+    in {
       nixosConfigurations.Aineias = nixpkgs.lib.nixosSystem {
       
         system = "x86_64-linux";
 
         specialArgs = {
           inherit inputs;
+          inherit osModules;
         };
 
         modules = [
