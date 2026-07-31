@@ -10,6 +10,7 @@
     swaybg      # Wallpaper utility
     noctalia-shell
     quickshell
+    gnome-keyring
   ];
 
   programs.niri = {
