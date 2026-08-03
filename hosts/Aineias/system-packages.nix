@@ -18,6 +18,7 @@
     fastfetch
     file
     fish
+    frr
     fzf
     git
     git-absorb
