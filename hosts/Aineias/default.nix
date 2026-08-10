@@ -15,6 +15,7 @@
       network.ssh
       network.firefox
       network.tailscale
+      nixvim
     ] ++ [
       ./hardware-configuration.nix
       ./system-packages.nix

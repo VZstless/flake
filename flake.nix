@@ -5,6 +5,7 @@
 
     # nixpkgs and Nix User Repo
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixvim.url = "github:nix-community/nixvim";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

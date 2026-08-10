@@ -32,10 +32,8 @@
     lsof
     mc
     nautilus
-    neovim
     nixd
     nix-output-monitor
-    nodejs
     nvtopPackages.intel
     obsidian
     obs-studio
