@@ -15,7 +15,16 @@
       relativenumber = true;
       shiftwidth = 2;
 
+      # backup related
+      backup = false;
+      writebackup = false;
+      updatetime = 300;
 
+      # char format & ignoring
+      wildignore = [ "*.a" "*.o" "*.jar" ".so" "pycache" ];
+      list = true;
+      listchars = { space = "_"; tab = ">~"; };
+      formatoptions = { n = true; j = true; t = true; };
     };
 
     globals.mapleader = " ";
@@ -36,7 +45,7 @@
       
       gitsigns = {
         enable = true;
-	settings = {
+        settings = {
           signs = {
             add          = { text = "┃"; };
             change       = { text = "┃"; };
