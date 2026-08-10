@@ -3,6 +3,9 @@
     # firefox in nixpkgs always has a lower version so use flake-firefox-nightly instead
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
+    # niri as a window manager
+    niri.url = "github:sodiboo/niri-flake";
+
     # lsp for nix
     nixd.url = "github:nix-community/nixd";
 
@@ -19,7 +22,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nur, nixd, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
 
     let
       lib = nixpkgs.lib;
@@ -38,8 +41,9 @@
           ./hosts/Aineias
           {
             nixpkgs.overlays = [
-              nur.overlays.default
-              nixd.overlays.default
+              inputs.niri.overlays.niri
+              inputs.nixd.overlays.default
+              inputs.nur.overlays.default
             ];
           }
           {

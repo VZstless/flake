@@ -15,7 +15,6 @@
 
   programs.niri = {
     enable = lib.mkForce true;
-    package = pkgs.niri;
   };
 
   programs.waybar.enable = lib.mkDefault true;          # Waybar status bar (top bar)
