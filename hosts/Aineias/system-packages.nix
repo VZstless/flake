@@ -32,7 +32,6 @@
     lsof
     mc
     nautilus
-    nixd
     nix-output-monitor
     nvtopPackages.intel
     obsidian

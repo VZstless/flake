@@ -3,16 +3,23 @@
     # firefox in nixpkgs always has a lower version so use flake-firefox-nightly instead
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
-    # nixpkgs and Nix User Repo
+    # lsp for nix
+    nixd.url = "github:nix-community/nixd";
+
+    # nixpkgs url
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
+    # nixvim, a neovim configured using nix
     nixvim.url = "github:nix-community/nixvim";
+    
+    # Nix User Repo
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nur, ... }:
+  outputs = inputs@{ self, nixpkgs, nur, nixd, ... }:
 
     let
       lib = nixpkgs.lib;
@@ -32,6 +39,7 @@
           {
             nixpkgs.overlays = [
               nur.overlays.default
+              nixd.overlays.default
             ];
           }
           {
