@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [ inputs.nixvim.nixosModules.nixvim ];
@@ -52,7 +52,27 @@
       };
       mini-completion.enable = true;
       quicker.enable = true;
-      lspconfig.enable = true;
+
+      lsp = {
+        servers.nixd = {
+          enable = true;
+          settings = {
+            nixd = {
+              nixpkgs = {
+                expr = "import <nixpkgs> { }";
+              };
+              formatting = {
+                command = [ "nixfmt" ];
+              };
+              options = {
+                nixos = {
+                  expr = ''(builtins.getFlake (toString ./.)).nixosConfigurations.${config.networking.hostName}.options'';
+                };
+              };
+            };
+          };
+        };
+      };
       
       gitsigns = {
         enable = true;
