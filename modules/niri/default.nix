@@ -15,6 +15,7 @@
 
   programs.niri = {
     enable = lib.mkForce true;
+    useNautilus = true;
   };
 
   programs.waybar.enable = lib.mkDefault true;          # Waybar status bar (top bar)

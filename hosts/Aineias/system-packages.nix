@@ -31,7 +31,6 @@
     lazygit
     lsof
     mc
-    nautilus
     nix-output-monitor
     nvtopPackages.intel
     obsidian
