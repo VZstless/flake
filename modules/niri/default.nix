@@ -8,6 +8,7 @@
     swaylock    # Screen locker (Super+Alt+L locks the screen)
     mako        # Notification daemon
     swaybg      # Wallpaper utility
+    nautilus
     noctalia-shell
     quickshell
     gnome-keyring

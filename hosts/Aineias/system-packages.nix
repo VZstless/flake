@@ -31,6 +31,8 @@
     lazygit
     lsof
     mc
+    nixd
+    nixfmt
     nix-output-monitor
     nvtopPackages.intel
     obsidian
