@@ -15,6 +15,9 @@
     # nixvim, a neovim configured using nix
     nixvim.url = "github:nix-community/nixvim";
     
+    # nh, yet another nix helper
+    nh.url = "github:nix-community/nh";
+
     # Nix User Repo
     nur = {
       url = "github:nix-community/NUR";

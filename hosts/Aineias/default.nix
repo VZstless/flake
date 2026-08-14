@@ -16,6 +16,7 @@
       network.firefox
       network.tailscale
       nixvim
+      nh
     ] ++ [
       ./hardware-configuration.nix
       ./system-packages.nix
