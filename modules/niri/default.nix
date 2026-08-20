@@ -1,6 +1,11 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.niri.lib.internal.settings-module
+    ./config.nix
+  ];
+
   services.displayManager.sessionPackages = [ pkgs.niri ];
   environment.systemPackages = with pkgs; [
     xwayland-satellite  # Required for X11 app compatibility
