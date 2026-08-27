@@ -114,8 +114,6 @@ in
     # Processes to spawn at startup.
     (leaf "spawn-at-startup" [ "fcitx5" "-d" ])
     (leaf "spawn-at-startup" [ "xrdb" "-merge" ".Xresources" ])
-    (leaf "spawn-at-startup" "waybar")
-    (leaf "spawn-at-startup" "swaybg -m fill -i /home/vzstless/Pictures/Wallpapers/mercredi.png")
     (leaf "spawn-at-startup" "noctalia")
 
     (plain "hotkey-overlay" [ ])

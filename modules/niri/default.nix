@@ -24,7 +24,7 @@
     useNautilus = true;
   };
 
-  programs.waybar.enable = lib.mkDefault true;          # Waybar status bar (top bar)
+  programs.waybar.enable = lib.mkDefault false;          # Waybar status bar (top bar)
   security.polkit.enable = lib.mkDefault true;          # Polkit for authentication dialogs
 
   # set to enable noctalia-shell
