@@ -382,6 +382,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787821052,
+        "narHash": "sha256-VPyAYTcIjZvG9hQ2DmwDYGQi1mbABe0wR9Fw3B1Uzeg=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "518c47c84c080953788c9c4abfa0716dc2315120",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -390,11 +410,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787833117,
-        "narHash": "sha256-9X0sFPE3ItUWISsnPYvKa7/AvlRUuxqDIN0WhbBQtZg=",
+        "lastModified": 1787833916,
+        "narHash": "sha256-oJtiI9jL7GyGJR3lJQ0TaFmiI6jEvI+D/WC4aedYS3g=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9fb805e6b8039d2356e7f5905eaea6731d238f29",
+        "rev": "7f8af3f64598d944ac5d61aea166deabdb2592f8",
         "type": "github"
       },
       "original": {
@@ -411,6 +431,7 @@
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
+        "noctalia": "noctalia",
         "nur": "nur"
       }
     },

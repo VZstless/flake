@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.niri.lib.internal.settings-module
+    inputs.noctalia.nixosModules.default
     ./config.nix
   ];
 
@@ -14,7 +15,6 @@
     mako        # Notification daemon
     swaybg      # Wallpaper utility
     nautilus
-    noctalia-shell
     quickshell
     gnome-keyring
   ];
@@ -30,4 +30,13 @@
   # set to enable noctalia-shell
   services.power-profiles-daemon.enable = lib.mkForce true;
   services.upower.enable = lib.mkForce true;
+
+  
+  programs.noctalia = {
+    enable = true;
+    package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+    # Enables NetworkManager, Bluetooth, UPower, and a power profile service.
+    recommendedServices.enable = true;
+  };
 }

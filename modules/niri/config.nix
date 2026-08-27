@@ -100,7 +100,7 @@ in
       (plain "struts" [
         (leaf "left" 0)
         (leaf "right" 0)
-        (leaf "top" (-30))
+        (leaf "top" 0)
         (leaf "bottom" 0)
       ])
     ])
@@ -116,7 +116,7 @@ in
     (leaf "spawn-at-startup" [ "xrdb" "-merge" ".Xresources" ])
     (leaf "spawn-at-startup" "waybar")
     (leaf "spawn-at-startup" "swaybg -m fill -i /home/vzstless/Pictures/Wallpapers/mercredi.png")
-    (leaf "spawn-sh-at-startup" "noctalia-shell")
+    (leaf "spawn-at-startup" "noctalia")
 
     (plain "hotkey-overlay" [ ])
 

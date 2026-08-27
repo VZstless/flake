@@ -3,6 +3,9 @@
     # firefox in nixpkgs always has a lower version so use flake-firefox-nightly instead
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
+    # nh, yet another nix helper
+    nh.url = "github:nix-community/nh";
+
     # niri as a window manager
     niri.url = "github:sodiboo/niri-flake";
 
@@ -14,9 +17,12 @@
     
     # nixvim, a neovim configured using nix
     nixvim.url = "github:nix-community/nixvim";
-    
-    # nh, yet another nix helper
-    nh.url = "github:nix-community/nh";
+
+    # noctalia-shell for niri
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+    };
 
     # Nix User Repo
     nur = {
