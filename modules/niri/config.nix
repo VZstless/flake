@@ -124,15 +124,7 @@ in
 
     # Window rule set for noctalia-shell: rounded corners.
     (plain "window-rule" [
-      (leaf "geometry-corner-radius" 20)
       (leaf "clip-to-geometry" true)
-    ])
-
-    # Work around WezTerm's initial configure bug by setting an empty
-    # default-column-width.
-    (plain "window-rule" [
-      (leaf "match" { app-id = ''^org\.wezfurlong\.wezterm$''; })
-      (plain "default-column-width" [ ])
     ])
 
     # Open the Firefox picture-in-picture player as floating by default.
