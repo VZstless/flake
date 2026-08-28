@@ -39,4 +39,9 @@
     # Enables NetworkManager, Bluetooth, UPower, and a power profile service.
     recommendedServices.enable = true;
   };
+
+  services = {
+    greetd.enable = true;
+    displayManager.noctalia-greeter.enable = true;
+  };
 }
