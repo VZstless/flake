@@ -8,6 +8,8 @@ I have no plan to use home-manager or other decalarative home directory manager,
 
 I want some change, btw torture myself and grow with some more knowledge.  
 
+To some degree I just want to use noctalia on niri and I have no plan using other desktop environment as I am already using KDE Plasma on my Arch Linux machine. Hyprland? Bonne chance...  
+
 ## ACKNOWLEDGEMENTS
 Intel Asia Pacific R&D Co. Ltd.  
 Noa Virellia  
