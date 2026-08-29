@@ -54,11 +54,6 @@
     "flakes"
   ];
 
-  system.autoUpgrade = {
-    enable = lib.mkDefault true;
-    allowReboot = lib.mkForce false;
-    channel = "https://channels.nixos.org/nixos-unstable";
-  };
   system.forbiddenDependenciesRegexes = [
     "-bun-"
     "-bun$"
