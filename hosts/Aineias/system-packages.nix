@@ -35,7 +35,6 @@
     nixfmt
     nix-output-monitor
     nvtopPackages.intel
-    obsidian
     obs-studio
     pciutils
     pinentry-all
