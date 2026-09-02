@@ -4,7 +4,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    alpine
+    aerc
     alsa-utils
     android-tools
     bat
@@ -18,7 +18,6 @@
     fastfetch
     file
     fish
-    frr
     fzf
     git
     git-absorb
@@ -28,7 +27,6 @@
     iptables
     just
     kitty
-    lazygit
     lsof
     mc
     nixd
@@ -36,6 +34,7 @@
     nix-output-monitor
     nvtopPackages.intel
     obs-studio
+    pass
     pciutils
     pinentry-all
     wget
