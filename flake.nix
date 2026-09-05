@@ -18,6 +18,12 @@
     # nixvim, a neovim configured using nix
     nixvim.url = "github:nix-community/nixvim";
 
+    # nix-on-droid, only for Tweedeldee.
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # noctalia-shell for niri
     noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -31,7 +37,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
+  outputs = inputs@{ self, nixpkgs, nix-on-droid, ... }:
 
     let
       lib = nixpkgs.lib;
@@ -58,6 +64,14 @@
           {
             nix.settings.trusted-users = [ "vzstless" ];
           }
+        ];
+      };
+      
+      # Tweedeldee, nix-on-droid on Samsung Galaxy s10e
+      nixOnDroidConfigurations.Tweedeldee = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        modules = [
+          ./hosts/Tweedeldee
         ];
       };
     };
