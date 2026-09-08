@@ -29,6 +29,7 @@
     kitty
     lsof
     mc
+    moonlight
     nixd
     nixfmt
     nix-output-monitor
