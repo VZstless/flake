@@ -11,7 +11,6 @@
     binsider
     bird2
     btop
-    cloc
     curl
     eog
     element-desktop
@@ -44,6 +43,7 @@
     telegram-desktop
     thunderbird
     tinyxxd
+    tokei
     tor-browser
     tree
     typst
