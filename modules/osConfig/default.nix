@@ -33,13 +33,13 @@
 
   nix.settings.auto-optimise-store = true;
 
-  boot.binfmt = {
-    emulatedSystems = [
-      "aarch64-linux"
-      "riscv64-linux"
-    ];
-    preferStaticEmulators = true; # required to work with podman
-  };
+  # boot.binfmt = {
+  #   emulatedSystems = [
+  #     "aarch64-linux"
+  #     "riscv64-linux"
+  #   ];
+  #   preferStaticEmulators = true; # required to work with podman
+  # };
 
   security.sudo.enable = true;
 
