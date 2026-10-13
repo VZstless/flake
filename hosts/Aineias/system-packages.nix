@@ -34,14 +34,11 @@
     nix-output-monitor
     nvtopPackages.intel
     obs-studio
-    pass
     pciutils
     pinentry-all
     wget
     ripgrep
-    squashfsTools
     telegram-desktop
-    thunderbird
     tinyxxd
     tokei
     tor-browser
