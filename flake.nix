@@ -67,13 +67,6 @@
         ];
       };
       
-      # Tweedeldee, nix-on-droid on Samsung Galaxy s10e
-      nixOnDroidConfigurations.Tweedeldee = nix-on-droid.lib.nixOnDroidConfiguration {
-        pkgs = import nixpkgs { system = "aarch64-linux"; };
-        modules = [
-          ./hosts/Tweedeldee
-        ];
-      };
     };
 }
 
