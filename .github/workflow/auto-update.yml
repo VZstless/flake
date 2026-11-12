@@ -1,0 +1,30 @@
+name: 'Auto update dependencies'
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 11 * * *'
+permissions:
+  actions: write
+  contents: write
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    env:
+      GIT_SSL_NO_VERIFY: 'true'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Update Dependencies
+        run: |
+          nix flake update
+
+      - name: Commit back to repository
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: 'Auto update dependencies'
+          commit_user_name: 'VZstless-bot'
+          commit_user_email: 'vzstless-bot@users.noreply.github.com'
