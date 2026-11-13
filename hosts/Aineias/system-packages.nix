@@ -24,13 +24,10 @@
     hyfetch
     inotify-info
     iptables
-    just
     kitty
     lsof
-    mc
     moonlight-qt
     nixd
-    nixfmt
     nix-output-monitor
     nvtopPackages.intel
     obs-studio
