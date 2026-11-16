@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 # For servers or NUCs, disable fcitx5 and inputMethod.
 
@@ -29,16 +34,16 @@
   };
 
   i18n.inputMethod = {
-    type = "fcitx5"; 
-    enable = lib.mkDefault true; 
-    fcitx5.addons = with pkgs; [ 
-      fcitx5-gtk # alternatively, 
+    type = "fcitx5";
+    enable = lib.mkDefault true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk # alternatively,
       qt6Packages.fcitx5-chinese-addons
       fcitx5-pinyin-moegirl
       fcitx5-pinyin-minecraft
       fcitx5-mozc
-      fcitx5-nord # a color theme 
-    ]; 
+      fcitx5-nord # a color theme
+    ];
   };
 
   environment.sessionVariables = {
@@ -47,7 +52,7 @@
 
   # install fonts
   fonts.packages = with pkgs; [
-    noto-fonts-cjk-sans   # Noto font, ready to change into other CJK font
+    noto-fonts-cjk-sans # Noto font, ready to change into other CJK font
     nerd-fonts.symbols-only
     # Optional: Add a full Nerd Font for terminals and other applications
     nerd-fonts.jetbrains-mono

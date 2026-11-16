@@ -5,7 +5,9 @@
 { osModules, ... }:
 
 {
-  imports =  with osModules; [
+  imports =
+    with osModules;
+    [
       gpg
       locale
       niri
@@ -17,7 +19,8 @@
       network.tailscale
       nixvim
       nh
-    ] ++ [
+    ]
+    ++ [
       ./hardware-configuration.nix
       ./system-packages.nix
       ./intel-graphics.nix
@@ -29,7 +32,11 @@
   users.users.vzstless = {
     isNormalUser = true;
     description = "VZstless";
-    extraGroups = [ "audio" "networkmanager" "wheel" ];
+    extraGroups = [
+      "audio"
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   system.stateVersion = "25.05";

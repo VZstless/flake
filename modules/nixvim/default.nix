@@ -6,7 +6,7 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    
+
     colorschemes.catppuccin.enable = true;
 
     opts = {
@@ -21,10 +21,23 @@
       updatetime = 300;
 
       # char format & ignoring
-      wildignore = [ "*.a" "*.o" "*.jar" ".so" "pycache" ];
+      wildignore = [
+        "*.a"
+        "*.o"
+        "*.jar"
+        ".so"
+        "pycache"
+      ];
       list = true;
-      listchars = { space = "_"; tab = ">~"; };
-      formatoptions = { n = true; j = true; t = true; };
+      listchars = {
+        space = "_";
+        tab = ">~";
+      };
+      formatoptions = {
+        n = true;
+        j = true;
+        t = true;
+      };
 
       cursorline = true;
       expandtab = true;
@@ -46,9 +59,9 @@
       treesitter.enable = true;
       fzf-lua = {
         enable = true;
-	settings = {
-	  fzf_colors = true;
-	};
+        settings = {
+          fzf_colors = true;
+        };
       };
       mini-completion.enable = true;
       quicker.enable = true;
@@ -66,39 +79,63 @@
               };
               options = {
                 nixos = {
-                  expr = ''(builtins.getFlake (toString ./.)).nixosConfigurations.${config.networking.hostName}.options'';
+                  expr = "(builtins.getFlake (toString ./.)).nixosConfigurations.${config.networking.hostName}.options";
                 };
               };
             };
           };
         };
       };
-      
+
       gitsigns = {
         enable = true;
         settings = {
           signs = {
-            add          = { text = "┃"; };
-            change       = { text = "┃"; };
-            delete       = { text = "_"; };
-            topdelete    = { text = "‾"; };
-            changedelete = { text = "~"; };
-            untracked    = { text = "┆"; };
+            add = {
+              text = "┃";
+            };
+            change = {
+              text = "┃";
+            };
+            delete = {
+              text = "_";
+            };
+            topdelete = {
+              text = "‾";
+            };
+            changedelete = {
+              text = "~";
+            };
+            untracked = {
+              text = "┆";
+            };
           };
           signs_staged = {
-            add          = { text = "┃"; };
-            change       = { text = "┃"; };
-            delete       = { text = "_"; };
-            topdelete    = { text = "‾"; };
-            changedelete = { text = "~"; };
-            untracked    = { text = "┆"; };
+            add = {
+              text = "┃";
+            };
+            change = {
+              text = "┃";
+            };
+            delete = {
+              text = "_";
+            };
+            topdelete = {
+              text = "‾";
+            };
+            changedelete = {
+              text = "~";
+            };
+            untracked = {
+              text = "┆";
+            };
           };
           signs_staged_enable = true;
           signcolumn = true;
-            numhl      = false;
-            linehl     = false;
-            word_diff  = false;
-            watch_gitdir = {
+          numhl = false;
+          linehl = false;
+          word_diff = false;
+          watch_gitdir = {
             follow_files = true;
           };
           auto_attach = true;

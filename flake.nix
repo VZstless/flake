@@ -14,15 +14,9 @@
 
     # nixpkgs url
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    
+
     # nixvim, a neovim configured using nix
     nixvim.url = "github:nix-community/nixvim";
-
-    # nix-on-droid, only for Tweedeldee.
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # noctalia-shell for niri
     noctalia = {
@@ -35,16 +29,37 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # treefmt is using for formatting this flake
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-on-droid, ... }:
+  outputs =
+    inputs@{ self, nixpkgs, ... }:
 
     let
       lib = nixpkgs.lib;
       osModules = import ./modules { inherit lib; };
-    in {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      eachSystem = lib.genAttrs systems;
+      mkPkgs = system: import inputs.nixpkgs { inherit system; };
+      mkTreefmt = system: inputs.treefmt-nix.lib.evalModule (mkPkgs system) ./treefmt.nix;
+    in
+    {
+      formatter = eachSystem (system: (mkTreefmt system).config.build.wrapper);
+
+      checks = eachSystem (system: {
+        formatting = (mkTreefmt system).config.build.check self;
+      });
+
       nixosConfigurations.Aineias = nixpkgs.lib.nixosSystem {
-      
+
         system = "x86_64-linux";
 
         specialArgs = {
@@ -66,7 +81,6 @@
           }
         ];
       };
-      
+
     };
 }
-

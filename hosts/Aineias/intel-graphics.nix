@@ -8,28 +8,31 @@
     extraPackages = with pkgs; [
       # Required for modern Intel GPUs (Xe iGPU and ARC)
       mesa
-      intel-media-driver     # VA-API (iHD) userspace
-      vpl-gpu-rt             # oneVPL (QSV) runtime
+      intel-media-driver # VA-API (iHD) userspace
+      vpl-gpu-rt # oneVPL (QSV) runtime
 
       # Optional (compute / tooling):
-      intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
+      intel-compute-runtime # OpenCL (NEO) + Level Zero for Arc/Xe
       # NOTE: 'intel-ocl' also exists as a legacy package; not recommended for Arc/Xe.
       # libvdpau-va-gl       # Only if you must run VDPAU-only apps
     ];
   };
 
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
+    LIBVA_DRIVER_NAME = "iHD"; # Prefer the modern iHD backend
     # VDPAU_DRIVER = "va_gl";      # Only if using libvdpau-va-gl
   };
 
   # May help if FFmpeg/VAAPI/QSV init fails (esp. on Arc with i915):
   hardware.enableRedistributableFirmware = true;
-  boot.kernelParams = [ 
+  boot.kernelParams = [
     "i915.enable_guc=3"
     "i915.force_probe=46a8"
   ];
 
   # May help services that have trouble accessing /dev/dri (e.g., jellyfin/plex):
-  users.users.vzstless.extraGroups = [ "video" "render" ];
+  users.users.vzstless.extraGroups = [
+    "video"
+    "render"
+  ];
 }

@@ -5,7 +5,7 @@
   networking.networkmanager.dns = "none";
   programs.mtr.enable = lib.mkForce true;
 
-  networking.nameservers = [ 
+  networking.nameservers = [
     "100.100.100.100"
     "8.8.8.8"
     "8.8.4.4"
