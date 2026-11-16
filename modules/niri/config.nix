@@ -186,8 +186,8 @@ in
       (plain "Mod+Up" [ (flag "focus-window-up") ])
       (plain "Mod+Right" [ (flag "focus-column-right") ])
       (plain "Mod+H" [ (flag "focus-column-left") ])
-      (plain "Mod+J" [ (flag "focus-window-down") ])
-      (plain "Mod+K" [ (flag "focus-window-up") ])
+      (plain "Mod+J" [ (flag "focus-window-or-workspace-down") ])
+      (plain "Mod+K" [ (flag "focus-window-or-workspace-up") ])
       (plain "Mod+L" [ (flag "focus-column-right") ])
 
       # Move windows.
@@ -196,8 +196,8 @@ in
       (plain "Mod+Ctrl+Up" [ (flag "move-window-up") ])
       (plain "Mod+Ctrl+Right" [ (flag "move-column-right") ])
       (plain "Mod+Ctrl+H" [ (flag "move-column-left") ])
-      (plain "Mod+Ctrl+J" [ (flag "move-window-down") ])
-      (plain "Mod+Ctrl+K" [ (flag "move-window-up") ])
+      (plain "Mod+Ctrl+J" [ (flag "move-window-down-or-to-workspace-down") ])
+      (plain "Mod+Ctrl+K" [ (flag "move-window-down-or-to-workspace-up") ])
       (plain "Mod+Ctrl+L" [ (flag "move-column-right") ])
 
       (plain "Mod+Home" [ (flag "focus-column-first") ])
