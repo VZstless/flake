@@ -197,7 +197,7 @@ in
       (plain "Mod+Ctrl+Right" [ (flag "move-column-right") ])
       (plain "Mod+Ctrl+H" [ (flag "move-column-left") ])
       (plain "Mod+Ctrl+J" [ (flag "move-window-down-or-to-workspace-down") ])
-      (plain "Mod+Ctrl+K" [ (flag "move-window-down-or-to-workspace-up") ])
+      (plain "Mod+Ctrl+K" [ (flag "move-window-up-or-to-workspace-up") ])
       (plain "Mod+Ctrl+L" [ (flag "move-column-right") ])
 
       (plain "Mod+Home" [ (flag "focus-column-first") ])
