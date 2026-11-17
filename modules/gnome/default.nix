@@ -1,5 +1,13 @@
-{ config, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 
+let
+  wallpaper = "${self}/wallpapers/kiddy-grade.jpg";
+in
 {
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -14,4 +22,16 @@
     gnome-user-docs
   ];
 
+  programs.dconf.profiles.user.databases = [
+    {
+      lockAll = true;
+      settings = {
+        "org/gnome/desktop/background" = {
+          picture-uri = "file://${wallpaper}";
+          picture-uri-dark = "file://${wallpaper}";
+          picture-options = "zoom";
+        };
+      };
+    }
+  ];
 }
