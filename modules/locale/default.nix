@@ -51,12 +51,28 @@
   };
 
   # install fonts
-  fonts.packages = with pkgs; [
-    noto-fonts-cjk-sans # Noto font, ready to change into other CJK font
-    nerd-fonts.symbols-only
-    # Optional: Add a full Nerd Font for terminals and other applications
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-  ];
+  fonts = {
+    # unicode addons
+    enableDefaultPackages = true;
+
+    # font packages
+    packages = with pkgs; [
+      noto-fonts-cjk-sans # Noto font, ready to change into other CJK font
+      noto-fonts-cjk-serif
+      unifont
+      nerd-fonts.symbols-only
+      # Optional: Add a full Nerd Font for terminals and other applications
+      nerd-fonts.fira-code
+    ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif CJK SC" "Unifont" ];
+        sansSerif = [ "Noto Sans CJK SC" "Unifont" ];
+        monospace = [ "Unifont" ];
+      };
+    };
+  };
 
 }
