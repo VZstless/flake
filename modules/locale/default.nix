@@ -57,20 +57,28 @@
 
     # font packages
     packages = with pkgs; [
-      noto-fonts-cjk-sans # Noto font, ready to change into other CJK font
-      noto-fonts-cjk-serif
+      source-han-sans
+      source-han-serif
+      # unihan support
       hanazono
+      # noctalia symbols
       nerd-fonts.symbols-only
-      # Optional: Add a full Nerd Font for terminals and other applications
       nerd-fonts.fira-code
+      # monospace
+      ubuntu-classic
     ];
 
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif CJK SC" ];
-        sansSerif = [ "Noto Sans CJK SC" ];
-        monospace = [ "Noto Sans Mono CJK SC" ];
+        serif = [ "Source Han Serif" ];
+        sansSerif = [ "Source Han Sans" ];
+        monospace = [ "ubuntu-classic" ];
+      };
+
+      hinting = {
+        enable = true;
+        style = "slight";
       };
     };
   };
