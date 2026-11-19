@@ -59,7 +59,7 @@
     packages = with pkgs; [
       noto-fonts-cjk-sans # Noto font, ready to change into other CJK font
       noto-fonts-cjk-serif
-      unifont
+      hanazono
       nerd-fonts.symbols-only
       # Optional: Add a full Nerd Font for terminals and other applications
       nerd-fonts.fira-code
@@ -68,9 +68,9 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif CJK SC" "Unifont" ];
-        sansSerif = [ "Noto Sans CJK SC" "Unifont" ];
-        monospace = [ "Unifont" ];
+        serif = [ "Noto Serif CJK SC" ];
+        sansSerif = [ "Noto Sans CJK SC" ];
+        monospace = [ "Noto Sans Mono CJK SC" ];
       };
     };
   };
