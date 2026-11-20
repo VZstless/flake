@@ -1,5 +1,12 @@
 {
   inputs = {
+
+    # disko is a decalarative disk partition and formatting tool
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # firefox in nixpkgs always has a lower version so use flake-firefox-nightly instead
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
@@ -68,6 +75,7 @@
         };
 
         modules = [
+          inputs.disko.nixosModules.disko
           ./hosts/Aineias
           {
             nixpkgs.overlays = [

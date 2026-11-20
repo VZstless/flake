@@ -21,6 +21,7 @@
       nh
     ]
     ++ [
+      ./disko.nix
       ./hardware-configuration.nix
       ./system-packages.nix
       ./intel-graphics.nix
