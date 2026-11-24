@@ -11,6 +11,7 @@
     binsider
     bird2
     btop
+    cachix
     curl
     eog
     element-desktop
