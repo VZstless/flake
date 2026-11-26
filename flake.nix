@@ -1,4 +1,14 @@
 {
+
+  description = "Nix configuration for VZ's machines"
+
+  nixConfig = {
+    extra-substituters = [ "https://vzstless-flake.cachix.org" ];
+    extra-trusted-public-keys = [
+      "vzstless-flake.cachix.org-1:BxShzFfr0XRLOwvZS9gcBZ6uehdAIugIDV050f+Ovac="
+    ];
+  };
+
   inputs = {
 
     # disko is a decalarative disk partition and formatting tool
