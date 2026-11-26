@@ -1,6 +1,6 @@
 {
 
-  description = "Nix configuration for VZ's machines"
+  description = "Nix configuration for VZ's machines";
 
   nixConfig = {
     extra-substituters = [ "https://vzstless-flake.cachix.org" ];
